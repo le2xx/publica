@@ -2,7 +2,9 @@
   "name": "@publica/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "landing:start": "nx serve landing"
+  },
   "private": true,
   "devDependencies": {
     "@angular-devkit/core": "~20.3.0",
