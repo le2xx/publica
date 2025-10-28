@@ -12,6 +12,12 @@
 nx g @nx/angular:app --name=landing --directory=apps/landing --style=scss --standalone=true --routing=false --ssr=false
 ```
 
+## Generate NestJs app
+
+```sh
+nx g @nx/nest:app --name=api --directory=apps/api
+```
+
 ## Generate a library
 
 ```sh
