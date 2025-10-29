@@ -1,0 +1,131 @@
+/* apps/landing/src/app/app.component.scss */
+.landing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #fafafa;
+  color: #111;
+}
+
+.header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    background: linear-gradient(135deg, #6e45e2, #88d3ce);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.search-box {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+
+  input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+
+    &:focus {
+      border-color: #6e45e2;
+    }
+  }
+
+  .search-btn {
+    padding: 0.75rem 1.5rem;
+    background: #6e45e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #5a37c5;
+    }
+  }
+}
+
+.results {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.result {
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  background: white;
+
+  .meta {
+    font-size: 0.875rem;
+    color: #888;
+    margin-top: 0.25rem;
+  }
+}
+
+.cta {
+  text-align: center;
+  margin-top: auto;
+
+  p {
+    margin-bottom: 1rem;
+    color: #555;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: #88d3ce;
+    color: #1a1a1a;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #77c2bd;
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: #888;
+  font-size: 0.9rem;
+  border-top: 1px solid #eee;
+}

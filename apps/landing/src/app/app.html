@@ -1,1 +1,38 @@
-<app-nx-welcome></app-nx-welcome>
+<div class="landing">
+    <header class="header">
+        <h1>Publica</h1>
+        <p>Official public data. Simple API.</p>
+    </header>
+
+    <main class="main">
+        <div class="search-box">
+            <input
+                    type="text"
+                    placeholder="Enter an address (e.g. 10 Downing Street, London)..."
+                    [(ngModel)]="query"
+                    (input)="onSearch()"
+            />
+            <button class="search-btn">Search</button>
+        </div>
+
+        @if (results.length > 0) {
+            <div class="results">
+                @for (result of results; track result.id) {
+                    <div class="result">
+                        <strong>{{ result.fullAddress }}</strong>
+                        <div class="meta">{{ result.country }}</div>
+                    </div>
+                }
+            </div>
+        }
+
+        <div class="cta">
+            <p>Need more? Get an API key for bulk lookups and commercial use.</p>
+            <a href="https://lemonsqueezy.com/..." target="_blank" class="btn">Get API Key</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Data from official government registries. Updated daily.</p>
+    </footer>
+</div>
