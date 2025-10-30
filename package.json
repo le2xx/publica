@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "landing:start": "nx serve landing",
+    "landing:build": "nx build landing",
     "api:start": "nx serve api"
   },
   "private": true,

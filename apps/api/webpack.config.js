@@ -2,6 +2,10 @@ const { NxAppWebpackPlugin } = require('@nx/webpack/app-plugin');
 const { join } = require('path');
 
 module.exports = {
+  entry: {
+    main: './src/main.ts',
+    worker: './src/parser/parser.worker.ts', // TODO явное указание воркера
+  },
   output: {
     path: join(__dirname, '../../dist/apps/api'),
     clean: true,
