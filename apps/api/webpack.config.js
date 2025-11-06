@@ -4,7 +4,7 @@ const { join } = require('path');
 module.exports = {
   entry: {
     main: './src/main.ts',
-    worker: './src/parser/parser.worker.ts', // TODO явное указание воркера
+    'workers/ban-parser.worker': './src/app/workers/ban-parser.worker.ts', // TODO явное указание воркера
   },
   output: {
     path: join(__dirname, '../../dist/apps/api'),
