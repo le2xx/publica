@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ParserModule } from './parser/parser.module';
+import { AddressEntity } from './address/address.entity';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { ParserModule } from './parser/parser.module';
         username: configService.get<string>('DB_USER'),
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_NAME'),
-        // entities: [UserEntity, FamilyEntity, FamilyMemberEntity, FamilyInvitationEntity],
+        entities: [AddressEntity],
         synchronize: true,
       }),
     }),
