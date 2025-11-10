@@ -7,6 +7,6 @@ export class ParserController {
 
   @Get()
   async getWorkerResult() {
-    return this.parserService.parseBan('aaa/bbb');
+    return this.parserService.parseBan();
   }
 }

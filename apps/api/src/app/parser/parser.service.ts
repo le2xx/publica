@@ -1,13 +1,17 @@
 import { Injectable, OnApplicationShutdown, Logger } from '@nestjs/common';
 import { Worker } from 'worker_threads';
 import { join } from 'path';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class ParserService implements OnApplicationShutdown {
   private readonly logger = new Logger(ParserService.name);
   private workers: Worker[] = [];
 
-  async parseBan(filePath: string): Promise<number> {
+  constructor(private configService: ConfigService ) {
+  }
+
+  async parseBan(filePath?: string): Promise<number> {
     const workerPath = join(__dirname, './workers/ban-parser.worker.js');
 
     // 🔍 Логируем путь к воркеру
@@ -15,7 +19,16 @@ export class ParserService implements OnApplicationShutdown {
 
     return new Promise((resolve, reject) => {
       const worker = new Worker(workerPath, {
-        workerData: { filePath },
+        workerData: {
+          filePath: filePath || './dist/apps/api/assets/adresses-02.csv.gz',
+          dbConfig: {
+            host: this.configService.get('DB_HOST'),
+            port: this.configService.get('DB_PORT'),
+            username: this.configService.get('DB_USER'),
+            password: this.configService.get('DB_PASSWORD'),
+            database: this.configService.get('DB_NAME'),
+          }
+        }
       });
 
       this.workers.push(worker);

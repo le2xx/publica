@@ -25,5 +25,5 @@ export class AddressEntity {
   @Column({ type: 'varchar', length: 32, nullable: true }) source_position: string | null;
   @Column({ type: 'varchar', length: 32, nullable: true }) source_nom_voie: string | null;
   @Column({ type: 'varchar', length: 8, nullable: true }) certification_commune: string | null;
-  @Column({ type: 'varchar', length: 255, nullable: true }) cad_parcelles: string | null;
+  @Column({ type: 'varchar', length: 2048, nullable: true }) cad_parcelles: string | null;
 }
