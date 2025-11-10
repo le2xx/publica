@@ -35,7 +35,7 @@ export class ParserService implements OnApplicationShutdown {
 
       worker.on('message', (result) => {
         this.logger.debug(`Worker message: ${JSON.stringify(result)}`);
-        if (result.status === 'success') {
+        if (result.status === 'start') {
           resolve(result.count);
         } else {
           reject(new Error(result.message || 'Unknown worker error'));
